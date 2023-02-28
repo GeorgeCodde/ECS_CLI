@@ -1,0 +1,30 @@
+{
+    "executionRoleArn": "arn:aws:iam::494117985516:role/ecsTaskExecutionRole3",
+    "memory": "1024",
+    "cpu": "256",
+    "taskRoleArn": "arn:aws:iam::494117985516:role/ecsTaskExecutionRole3",
+    "family": "mi_app_por_cli",
+    "containerDefinitions": [
+        {
+            "name": "mi_app_por_cli",
+            "image": "494117985516.dkr.ecr.us-east-1.amazonaws.com/api:latest",
+            "cpu": 256,
+            "memoryReservation": 512,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "containerPort": 80
+                }
+            ],
+            "environment": [],
+            "essential": true,
+            "readonlyRootFilesystem": false
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "volumes": []
+}
